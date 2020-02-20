@@ -1,0 +1,17 @@
+version: '2.1'
+
+services:
+  web_server:
+    container_name: webdev
+    restart: always
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    volumes:
+      - web_data:/usr/local/apache2/htdocs/
+volumes:
+  web_data:
+    external:
+      name: web_data
