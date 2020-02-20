@@ -45,6 +45,39 @@ body {
     padding: 100px;
 }
 
+.set-score-panel {
+    position: absolute;
+    width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 280px;
+    background-color: #EB4D4D;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.score-label {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #222;
+}
+
+
+input[type=text] {
+    width: 100%;
+    padding: 8px 8px;
+    margin: 0px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #EB4D4D;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
 
 
 /**********************************************
@@ -141,14 +174,36 @@ i {
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
-.dice {
+
+
+.dice-panel {
     position: absolute;
     left: 50%;
     top: 178px;
     transform: translateX(-50%);
-    height: 100px;
+    height: 160px;
+    width:200px;
+}
+
+.dice-1 {
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    transform: translateX(-120%);
+    height: 70px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.dice-2 {
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    transform: translateX(20%);
+    height: 70px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
 }
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+
