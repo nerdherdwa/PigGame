@@ -20,15 +20,16 @@ document.getElementById('win-score').addEventListener('change', function() {
 document.querySelector('.btn-roll').addEventListener('click', function() {
     if (gamePlaying) {
         document.getElementById('win-score').disabled = true;
+        document.getElementById('message').textContent = '';
         var dice1 = Math.floor(Math.random() * 6) + 1;
         var dice2 = Math.floor(Math.random() * 6) + 1;
         dice = [dice1,dice2];
 
         diceDOM1.style.display = 'block';
-        diceDOM1.src = '/imgs/dice-' + dice[0] + '.png';
+        diceDOM1.src = 'imgs/dice-' + dice[0] + '.png';
 
         diceDOM2.style.display = 'block';
-        diceDOM2.src = '/imgs/dice-' + dice[1] + '.png';
+        diceDOM2.src = 'imgs/dice-' + dice[1] + '.png';
         //3. update the round score if the rolled number was not a one
         
         if (dice[0] === 1 || dice[1] === 1) {
@@ -70,7 +71,8 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         // check player won game
         if (scores[activePlayer] >= winScore) {
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!!!!';
-            diceDOM.style.display = 'none';
+            diceDOM1.style.display = 'none';
+            diceDOM2.style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel' ).classList.remove('active');
             document.querySelector('.player-' + activePlayer + '-panel' ).classList.add('winner');
             gamePlaying = false;
@@ -120,4 +122,5 @@ function newGame() {
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
     document.getElementById('win-score').disabled = false;
+    document.getElementById('message').textContent = '';
 }
